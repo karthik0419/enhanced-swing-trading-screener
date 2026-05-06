@@ -7,8 +7,8 @@ def _validate_cup_shape(cup_data):
     if n < 9:
         return False
     low_idx = cup_data['Low'].argmin()
-    # Low must be in the central 60% of the cup (not the first or last 20%)
-    return int(n * 0.20) <= low_idx <= int(n * 0.80)
+    # Low must be in the central 80% of the cup (not the first or last 10%)
+    return int(n * 0.10) <= low_idx <= int(n * 0.90)
 
 
 def _detect_cup_handle(df, min_bars, cup_bars, handle_bars,
@@ -45,14 +45,14 @@ def _detect_cup_handle(df, min_bars, cup_bars, handle_bars,
     handle_low   = float(handle_data['Low'].min())
     current_price = float(df['Close'].iloc[-1])
 
-    # Handle must sit in upper 40% of cup range
+    # Handle must sit in upper 35% of cup range
     handle_position = (handle_low - cup_low) / (cup_high - cup_low)
-    if handle_position < 0.40:
+    if handle_position < 0.35:
         return None
 
     # Handle retracement must be tighter than cup
     handle_depth = (handle_high - handle_low) / cup_high
-    if handle_depth > cup_depth * 0.50:
+    if handle_depth > cup_depth * 0.65:
         return None
 
     # Breakout = right rim or handle high, whichever is higher
@@ -94,9 +94,9 @@ def detect_cup_handle(df):
         min_bars   = 80,
         cup_bars   = 60,   # ~3 months on daily
         handle_bars = 15,  # ~3 weeks handle
-        min_depth  = 0.15,
-        max_depth  = 0.50,
-        near_pct   = 0.05, # within 5% of breakout
+        min_depth  = 0.12, # lowered from 0.15 — catches shallower cups like BAJAJ-AUTO
+        max_depth  = 0.60, # raised from 0.50 — catches deeper cups like LAURUSLABS
+        near_pct   = 0.08, # raised from 0.05 — within 8% of breakout
     )
 
 
