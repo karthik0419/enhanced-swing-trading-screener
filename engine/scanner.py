@@ -4,7 +4,7 @@ from data.loader import fetch_multi_tf
 from patterns.breakout import detect_breakout
 from patterns.retest import detect_retest
 from patterns.compression import detect_compression
-from patterns.cup_handle import detect_cup_handle
+from patterns.cup_handle import detect_cup_handle, detect_cup_handle_weekly
 from patterns.double_top_bottom import detect_double_top, detect_double_bottom
 from patterns.darvas_box import detect_darvas_box
 from patterns.flags import detect_flag_pennant, detect_pennant
@@ -29,7 +29,8 @@ def scan_stock(symbol):
     # 🔥 DAILY PATTERN (Advanced)
     # -----------------------
     result = (
-        detect_cup_handle(df_daily) or  # High probability
+        detect_cup_handle_weekly(df_weekly) or  # Highest priority — weekly C&H
+        detect_cup_handle(df_daily) or  # Daily C&H
         detect_double_bottom(df_daily) or  # Reversal
         detect_double_top(df_daily) or  # Short setup
         detect_darvas_box(df_daily) or  # Consolidation breakout
