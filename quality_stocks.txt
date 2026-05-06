@@ -1,0 +1,65 @@
+# High-Quality NSE Stocks for Swing Trading
+# Large-cap, liquid stocks with good pattern formation potential
+
+# IT Sector
+INFY.NS
+TCS.NS
+WIPRO.NS
+HCLTECH.NS
+TECHM.NS
+
+# Banking Sector
+HDFCBANK.NS
+ICICIBANK.NS
+KOTAKBANK.NS
+AXISBANK.NS
+SBIN.NS
+
+# Pharma Sector
+SUNPHARMA.NS
+DRREDDY.NS
+CIPLA.NS
+LUPIN.NS
+
+# Auto Sector
+MARUTI.NS
+M&M.NS
+BAJAJ-AUTO.NS
+HEROMOTOCO.NS
+
+# FMCG Sector
+HINDUNILVR.NS
+ITC.NS
+NESTLEIND.NS
+DABUR.NS
+
+# Infrastructure
+LT.NS
+ULTRACEMCO.NS
+JSWSTEEL.NS
+TATASTEEL.NS
+
+# Energy Sector
+RELIANCE.NS
+ONGC.NS
+GAIL.NS
+BPCL.NS
+NTPC.NS
+
+# Financial Services
+BAJFINANCE.NS
+CHOLAFIN.NS
+
+# Metals
+HINDALCO.NS
+VEDL.NS
+COALINDIA.NS
+
+# Additional Quality Stocks
+TITAN.NS
+ADANIENT.NS
+ADANIGREEN.NS
+JSWENERGY.NS
+POWERGRID.NS
+
+# Total: 45 high-quality stocks
